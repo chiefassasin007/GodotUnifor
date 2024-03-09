@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://brp0kum825va5"]
+
+[ext_resource type="Texture2D" uid="uid://dt0af4o7yh41a" path="res://Assets Space Invades/Player/Player.png" id="1_3dc01"]
+[ext_resource type="Script" path="res://Scene/player.gd" id="1_vjhy1"]
+[ext_resource type="Script" path="res://Scene/Shooting.gd" id="3_6miuj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjup6"]
+size = Vector2(13, 4.9375)
+
+[node name="Player" type="Area2D"]
+collision_mask = 8
+script = ExtResource("1_vjhy1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_3dc01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.53125)
+shape = SubResource("RectangleShape2D_sjup6")
+
+[node name="Shooting" type="Node2D" parent="."]
+script = ExtResource("3_6miuj")
