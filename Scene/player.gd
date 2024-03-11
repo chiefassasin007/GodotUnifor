@@ -1,4 +1,6 @@
 extends Area2D
+
+class_name Player
 #velocidade do player
 @export var speed = 200 # slide 1.4
 #movimentacao Vector2 = movimentacao dos personagens sobre os eixos X, Y
@@ -16,6 +18,7 @@ var end_bound
 var teste
 #starta o elemento de colisoes (variavel que delimita o espaco de atuacao do player);
 @onready var collistion_rect: CollisionShape2D = $CollisionShape2D #slide1.4
+@onready var animation_player = $AnimationPlayer
 
 
 
@@ -59,3 +62,8 @@ func _process(delta): #slide1.4;
 	
 	position.x += delta_movement #slide1.4;
 	
+
+# quando o player explodir execute o destroy animation
+func on_player_destroyed():
+	speed = 0
+	animation_player.play("destroy")

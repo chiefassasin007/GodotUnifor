@@ -7,3 +7,9 @@ class_name InvaderShot
 func _process(delta):
 	position.y += speed * delta
 
+
+
+func _on_area_entered(area):
+	if area is Player:
+		(area as Player).on_player_destroyed()
+		queue_free()

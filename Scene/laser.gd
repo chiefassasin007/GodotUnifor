@@ -11,7 +11,7 @@ class_name Laser #slide1.5;
 # velocidade que o laser sai do player e viaja pela tela;
 # o @export está aq apenas por capricho, mecher aq ou ir em Laser(Area 2d)> inspector> speed
 # e alterar a velocidade da na mesma;
-@export var speed = 300 
+@export var speed = 600 
 
 # aq vc está dizendo q o laser esta andando na posição y o '-=' indica q o laser esta andando para cima, 
 # delta se refere amudança q o frame faz por segundo, 'speed * delta' é a atualização do movimento
