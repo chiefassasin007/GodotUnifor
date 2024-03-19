@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://by4rtlbrck8gi"]
+[gd_scene load_steps=12 format=3 uid="uid://by4rtlbrck8gi"]
 
 [ext_resource type="PackedScene" uid="uid://brp0kum825va5" path="res://Scene/player.tscn" id="1_gy6g8"]
 [ext_resource type="PackedScene" uid="uid://c7by8adft4pao" path="res://Scene/bullet_catcher.tscn" id="2_ggvwx"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://Scene/UfoSpawner.gd" id="4_6jvew"]
 [ext_resource type="Script" path="res://Scene/SpawnTimer.gd" id="5_xx60j"]
 [ext_resource type="PackedScene" uid="uid://bixm7j20bsn26" path="res://Scene/bunker.tscn" id="6_ujdc8"]
+[ext_resource type="Script" path="res://Scene/LifeManager.gd" id="7_wh74v"]
+[ext_resource type="Script" path="res://Scene/PointsCounter.gd" id="8_5b60b"]
+[ext_resource type="PackedScene" uid="uid://b2q7qf8d36t5m" path="res://Scene/ui.tscn" id="9_na47s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgo7c"]
 size = Vector2(20, 648)
@@ -71,6 +74,14 @@ scale = Vector2(4, 4)
 [node name="Bunker4" parent="." instance=ExtResource("6_ujdc8")]
 position = Vector2(376, 174)
 scale = Vector2(4, 4)
+
+[node name="LifeManager" type="Node" parent="."]
+script = ExtResource("7_wh74v")
+
+[node name="PointsCounter" type="Node" parent="."]
+script = ExtResource("8_5b60b")
+
+[node name="UI" parent="." instance=ExtResource("9_na47s")]
 
 [connection signal="area_entered" from="Walls/LeftWall" to="InvaderSpawner" method="_on_left_wall_area_entered"]
 [connection signal="area_entered" from="Walls/RightWall" to="InvaderSpawner" method="_on_right_wall_area_entered"]
